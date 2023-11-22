@@ -5,7 +5,9 @@ cask 'eduvpn' do
   url "https://app.eduvpn.nl/mac/eduVPN_#{version}.dmg"
   name 'eduVPN'
   homepage 'https://app.eduvpn.nl/'
-  appcast 'https://app.eduvpn.nl/mac/appcast.xml'
+  livecheck do
+    url 'https://app.eduvpn.nl/mac/appcast.xml'
+  end
   auto_updates true
   depends_on macos: '>= :sierra'
 
